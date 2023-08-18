@@ -10,7 +10,7 @@ var enemyDefense = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("jugador/hud/Timer-empezar").start()
+	get_node("jugador/hud/Timerempezar").start()
 	get_node("jugador/carta").hide()
 	get_node("malo").hide()
 	playerAttack = get_player_attack()
@@ -29,7 +29,7 @@ func _on_Timerempezar_timeout():
 	get_node("jugador/carta").show()
 	get_node("malo").show()
 #	get_node("jugador/carta/Texto/Ataque").set_text(str("Tu ataque: \n") + str(playerAttackstr)+("\n")+str("Ataca"))
-	get_node("jugador/carta/Texto/Ataque").set_text(str("Tu ataque: \n")+ str(playerAttack)+("\n")+str("Ataca"))
+	get_node("jugador/carta/Texto/Ataque").set_text(str("Tu carta: \n")+ str(playerAttack)+("\n")+str("Ataca"))
 	get_node("malo/Label").set_text(str("El malo: \n") + str(enemyDefense))
 	print("Empieza")
 	pass # Replace with function body.
@@ -51,17 +51,9 @@ func _on_TextureButton_pressed():
 			get_node("jugador/hud/Label").set_text(str("¡El enemigo gana! \n ¡Pierdes!"))
 		else:
 			get_node("jugador/hud/Label").set_text(str("¡Empate! \n "))
-	# print("¡El jugador gana!")
-#elif playerTotal < enemyTotal:
-#print("¡El enemigo gana!")
-#else:
-#        print("¡Empate!")
-	pass # Replace with function body.
 #
 #func  -> int:
-## Aquí puedes obtener el valor de ataque del jugador desde su carta actual
-## Puedes reemplazar esta lógica con la forma en que almacenas y obtienes los valores de las cartas del jugador
-#return randi_range(1, 5)
+## Aquí puedes obtener el valor de ataque del jugador de forma alaeatoria
 	
 func get_player_attack()-> int:
 	return  int(rand_range(1,6))

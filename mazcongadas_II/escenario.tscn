@@ -12,6 +12,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="jugador" type="Node2D" parent="."]
+position = Vector2( 16, -8 )
 
 [node name="hud" type="Node2D" parent="jugador"]
 scale = Vector2( 2.5, 2.5 )
@@ -25,17 +26,17 @@ text = "Has entrado a la mazmorra lanza tu ataque pulsando la pantalla
 You have entered the dungeon launch your attack by pressing 
 the screen"
 
-[node name="Timer-empezar" type="Timer" parent="jugador/hud"]
+[node name="Timerempezar" type="Timer" parent="jugador/hud"]
 wait_time = 2.0
 one_shot = true
 
 [node name="carta" type="Sprite" parent="jugador"]
-position = Vector2( 388, 449 )
+position = Vector2( 162, 429 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="Texto" type="Node2D" parent="jugador/carta"]
-position = Vector2( -97, 0 )
+position = Vector2( -136, -8 )
 scale = Vector2( 3, 3 )
 
 [node name="Ataque" type="Label" parent="jugador/carta/Texto"]
@@ -44,8 +45,10 @@ margin_bottom = 14.0
 text = "Tu ataque: "
 
 [node name="TextureButton" type="TextureButton" parent="jugador"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -12.0
+margin_top = -6.0
+margin_right = 28.0
+margin_bottom = 34.0
 rect_scale = Vector2( 26.0083, 15.3282 )
 
 [node name="Timer" type="Timer" parent="jugador/TextureButton"]
@@ -53,6 +56,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="malo" type="Node2D" parent="."]
+position = Vector2( 52, 10 )
 scale = Vector2( 2, 2 )
 
 [node name="Sprite" type="Sprite" parent="malo"]
@@ -61,12 +65,12 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="malo"]
-margin_left = 386.5
-margin_top = 221.0
-margin_right = 426.5
-margin_bottom = 235.0
+margin_left = 373.5
+margin_top = 220.0
+margin_right = 413.5
+margin_bottom = 234.0
 text = "ggg"
 
-[connection signal="timeout" from="jugador/hud/Timer-empezar" to="." method="_on_Timerempezar_timeout"]
+[connection signal="timeout" from="jugador/hud/Timerempezar" to="." method="_on_Timerempezar_timeout"]
 [connection signal="pressed" from="jugador/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="timeout" from="jugador/TextureButton/Timer" to="." method="_on_Timer_timeout"]
