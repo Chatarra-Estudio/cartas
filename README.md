@@ -3,6 +3,12 @@ Juego de cartas: plantilla básica
 
 Creado con Godote 3.5.1
 
+# # Objetivos de evoluación:
+
+Incluir cartas de ataque 
+Incluir cartas de los malos
+Incluir dado
+
 ------------------------ Game Jams --------------------------
 ------------------------------------------------------------
 Evolución y gráficos para Jam 2 horas
