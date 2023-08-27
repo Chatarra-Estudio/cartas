@@ -21,6 +21,8 @@ https://itch.io/jam/lame-jam-31/entries
 
 https://github.com/Chatarra-Estudio/cartas/tree/1ffac1183b5699c4c186431f6e0bee78a6a53f9c
 
+https://josegar.itch.io/cinquillo-bill
+
 ------------------------------------------------------------
 
 Desarrollo para Jam 3 horas
@@ -33,4 +35,8 @@ https://onehourgamejam.com/?page=jam&jam=429
 
 https://github.com/Chatarra-Estudio/cartas/tree/884b561ccdf084f854c3213a450fc3b08da58df5
 
+https://josegarciamoreno.github.io/Chatarra-Estudio/landing2023/jam249th/mazcongadas_ii.html
+
 ------------------------------------------------------------
+
+https://chatarra-estudio.github.io/ 
