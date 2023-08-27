@@ -7,6 +7,10 @@ var banAt = false
 var playerAttack = 0
 var enemyDefense = 0
 
+var li_fondo0 = preload("res://imagen/fondo0.jpg")
+var li_fondo1 = preload("res://imagen/fondo1.jpg")
+var li_fondo2 = preload("res://imagen/fondo2.jpg")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +19,12 @@ func _ready():
 	get_node("malo").hide()
 	playerAttack = get_player_attack()
 	enemyDefense = get_enemy_defense()
+	get_node("jugador/hud/ft").hide()
+	get_node("jugador/carta/ataque").hide()
+#	fondo
+	print("fondo: " ,get_node("fondo0").texture)
+	
+	
 	pass # Replace with function body.
 
 
@@ -32,6 +42,7 @@ func _on_Timerempezar_timeout():
 	get_node("jugador/carta/Texto/Ataque").set_text(str("Tu carta: \n")+ str(playerAttack)+("\n")+str("Ataca"))
 	get_node("malo/Label").set_text(str("El malo: \n") + str(enemyDefense))
 	print("Empieza")
+	get_node("fondo0").set_texture(li_fondo1)
 	pass # Replace with function body.
 
 
@@ -45,12 +56,24 @@ func _on_TextureButton_pressed():
 		get_node("malo/Label").set_text(str("Malo defiende: \n")+ str(enemyDefense)+(" + ")+str(alemalo)+(" = ")+str(enemyDefense+alemalo)+str("\n Acho"))
 		get_node("jugador/TextureButton/Timer").start()
 		get_node("jugador/hud/Label").show()
+		get_node("jugador/carta/ataque").show()
+#		poner cartas
+		if ale == 1:
+			print("poner carta 1")
+		elif ale == 2:
+			print("poner carta 2")
+		else:
+			print("poner carta del 3 al 5")
+#		poner resultados
 		if ale+playerAttack > enemyDefense+alemalo:
-			get_node("jugador/hud/Label").set_text(str("¡El jugador gana! \n"))
+			get_node("jugador/hud/Label").set_text(str(" You win! \n ¡El jugador gana! "))
+			get_node("jugador/hud/ft").show()
 		elif ale+playerAttack < enemyDefense+alemalo:
-			get_node("jugador/hud/Label").set_text(str("¡El enemigo gana! \n ¡Pierdes!"))
+			get_node("jugador/hud/Label").set_text(str("You lost, the bad guy won¡\nEl enemigo gana! ¡Pierdes!"))
+			get_node("jugador/hud/ft").show()
 		else:
 			get_node("jugador/hud/Label").set_text(str("¡Empate! \n "))
+			get_node("jugador/hud/ft").show()
 #
 #func  -> int:
 ## Aquí puedes obtener el valor de ataque del jugador de forma alaeatoria

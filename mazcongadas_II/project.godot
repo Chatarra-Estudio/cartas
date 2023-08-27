@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Mazcongadas II"
+config/name="Cinquillo Bill"
 run/main_scene="res://escenario.tscn"
 config/icon="res://icon.png"
 
