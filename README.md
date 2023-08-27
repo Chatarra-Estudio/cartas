@@ -3,7 +3,7 @@ Juego de cartas: plantilla básica
 
 Creado con Godote 3.5.1
 
-## Objetivos de evoluación:
+## Objetivos de evolución:
 
 Incluir cartas de ataque: gráficos + mecánicas
 Incluir cartas de los malos: gráficos + mecánicas
